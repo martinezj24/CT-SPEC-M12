@@ -1,18 +1,19 @@
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import PostsList from './PostsList';
-import CreatePostForm from './CreatePostForm';
+import CreatePostForm from './forms/CreatePostForm';
+import { Container } from 'react-bootstrap';
 
 const queryClient = new QueryClient();
 
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <div>
+      <Container className="my-4">
         <h1>CRUD Operations with React Query</h1>
         <CreatePostForm />
         <PostsList />
-      </div>
+      </Container>
     </QueryClientProvider>
   );
 };
